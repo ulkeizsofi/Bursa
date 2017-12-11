@@ -5,10 +5,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class Offer {
 	private double value;
 	private Date date;
-	private AtomicInteger id;
+	private Integer id;
 	
 	public Offer(int id, double value, Date date) {
-		this.id = new AtomicInteger(id);
+		this.id = id;
 		this.value = value;
 		this.date = (Date) date.clone();
 	}
@@ -22,6 +22,9 @@ public final class Offer {
 	}
 	
 	public int getID() {
-		return id.intValue();
+		return id;
+	}
+	public String toString() {
+		return "Offer " + id + " with value " + value + "at" + date;
 	}
 }
